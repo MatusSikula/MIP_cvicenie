@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
+   <children>
+      <ChoiceBox fx:id="countrySelection" layoutX="30.0" layoutY="83.0" prefWidth="150.0" />
+      <Label layoutX="30.0" layoutY="38.0" prefHeight="33.0" prefWidth="150.0" text="Starting country:" />
+      <Label layoutX="246.0" layoutY="38.0" prefHeight="33.0" prefWidth="150.0" text="Starting city:" />
+      <ChoiceBox fx:id="citySelection" layoutX="246.0" layoutY="83.0" prefWidth="150.0" />
+      <Separator layoutX="-6.0" layoutY="127.0" prefHeight="9.0" prefWidth="610.0" />
+      <Separator layoutX="-6.0" layoutY="406.0" prefHeight="9.0" prefWidth="610.0" />
+      <Button fx:id="run" layoutX="459.0" layoutY="17.0" mnemonicParsing="false" onAction="#decideRoute" prefHeight="42.0" prefWidth="103.0" text="Run" />
+      <ListView fx:id="countryList" layoutX="14.0" layoutY="137.0" prefHeight="267.0" prefWidth="167.0" />
+      <FlowPane hgap="200.0" layoutX="215.0" layoutY="146.0" prefHeight="244.0" prefWidth="142.0" vgap="40.0">
+         <children>
+            <CheckBox fx:id="box0" mnemonicParsing="false" onAction="#box0" visible="false" />
+            <CheckBox fx:id="box1" mnemonicParsing="false" onAction="#box1" visible="false" />
+            <CheckBox fx:id="box2" mnemonicParsing="false" onAction="#box2" visible="false" />
+            <CheckBox fx:id="box3" mnemonicParsing="false" onAction="#box3" visible="false" />
+            <CheckBox fx:id="box4" mnemonicParsing="false" onAction="#box4" visible="false" />
+         </children>
+      </FlowPane>
+      <Label fx:id="output" alignment="BOTTOM_CENTER" layoutY="409.0" prefHeight="42.0" prefWidth="600.0" />
+      <RadioButton fx:id="wRadio" layoutX="467.0" layoutY="75.0" mnemonicParsing="false" text="Go West">
+         <toggleGroup>
+            <ToggleGroup fx:id="sides" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="eRadio" layoutX="468.0" layoutY="100.0" mnemonicParsing="false" text="Go East" toggleGroup="$sides" />
+      <Label fx:id="vOutput" alignment="TOP_CENTER" layoutY="451.0" prefHeight="42.0" prefWidth="600.0" />
+      <Label fx:id="distance" layoutY="472.0" prefHeight="26.0" prefWidth="160.0" />
+   </children>
+</AnchorPane>
